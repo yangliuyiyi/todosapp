@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" ng-app="todo">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=414,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>todo应用</title>
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<script src="js/jquery-1.11.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/angular.js" type="text/javascript" charset="utf-8"></script>
+		<script src="angularjs/angular-animate.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body ng-controller="mainCtrl">
+		<div class="nav"> </div>
+		<div class="top">
+			<div class="point"></div>
+			<div class="title">Today's Bites</div>
+			<div class="notes"></div>
+		</div>
+		<div class="des">
+			<h3>Website Redesign and Reboot</h3>
+			<p>It's a super cool yearly tradition where designers from across the globe update their personal websites -I'm pretty excited.</p>
+		</div>
+		<div class="main">
+			<div class="card">
+				<div class="header">
+					<input type="text" placeholder="请输入" ng-keyup="add($event);save()" ng-model="name">
+				</div>
+				<ul class="todos" ng-init="key=''">
+					<li class="todo" ng-repeat="v in todos | filter:{isDone:key} track by v.id " ng-class="{wancheng:v.isDone,bianji:ed}" ng-init="ed=false" ng-dblclick="ed=true;focus($event)">
+						<div class="check" ng-click="v.isDone=!v.isDone;save()"></div>
+						<p>
+							{{v.name}}
+						</p>
+						<input type="text" ng-model="v.name" ng-blur="ed=false" ng-change="save()">
+						<div class="delete" ng-click="delete(v.id);save()"></div>
+					</li>
+				</ul>
+				<div class="footer">
+					<a href="#">
+						<span ng-class="{active:(key===true)}" ng-click="key=true"></span>
+					</a>
+					<a href="#">
+						<span ng-class="{active:(key===false)}" ng-click="key=false"></span>
+					</a>
+					<a href="#">
+						<span ng-click="clear();save()"></span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

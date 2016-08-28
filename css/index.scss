@@ -1,0 +1,194 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+    font-family: "微软雅黑";
+    box-sizing: border-box;
+}
+input {
+    outline: none;
+    background: transparent;
+    border: none;
+}
+body {
+    background: url(../img/Inner.jpg)no-repeat;
+    background-size: 100%;
+}
+.nav {
+    width: 100%;
+    height: 28px;
+    background: url(../img/Inner_01.png)no-repeat center center;
+    background-size: 100%;
+}
+.top {
+    width: 100%;
+    height: 80px;
+    margin-bottom: 10px;
+    .point {
+        width: 30px;
+        height: 33px;
+        background: url(../img/Inner_04.png)no-repeat;
+        background-size: cover;
+        position: absolute;
+        left: 33px;
+        top: 10px;
+    }
+    .title {
+        width: 100%;
+        height: 80px;
+        text-align: center;
+        line-height: 60px;
+        font-size: 22px;
+        color: #fff;
+    }
+    .notes {
+        width: 30px;
+        height: 33px;
+        background: url(../img/Inner_07.png)no-repeat;
+        background-size: cover;
+        position: absolute;
+        right: 27px;
+        top: 10px;
+    }
+}
+.des {
+    width: 80%;
+    height: 120px;
+    margin: 0 auto;
+    font-family: arial;
+    h3 {
+        font-weight: 300;
+        color: #000;
+    }
+    p {
+        margin-top: 5px;
+        color: #b2b2b2;
+    }
+}
+.main .card {
+    width: 380px;
+    margin: 0 auto;
+    .header {
+        padding-left: 40px;
+        height: 50px;
+        border-bottom: 1px dashed #ccc;
+        margin-bottom: 7px;
+        &::before {
+            content: '❯';
+            font-size: 20px;
+            color: #737373;
+            padding: 10px 10px 0;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        input {
+            width: 100%;
+            height: 50px;
+            font-size: 16px;
+            font-weight: 200;
+            padding-left: 15px;
+            display: block;
+        }
+    }
+}
+.main .card .todos {
+    overflow-y: auto;
+    .todo {
+        height: 60px;
+        position: relative;
+        .check {
+            width: 40px;
+            height: 40px;
+            float: left;
+            margin: 5px 0 0 10px;
+            background: url(../img/Inner_15.png)no-repeat center center;
+            background-size: 40px 40px;
+        }
+        p {
+            line-height: 50px;
+            padding-left: 15px;
+            float: left;
+            font-size: 20px;
+        }
+        input {
+            display: block;
+            width: 300px;
+            height: 60px;
+            font-size: 15px;
+            margin-left: 40px;
+            padding-left: 15px;
+            font-weight: 100;
+            box-shadow: 0 0 3px #000 inset;
+            display: none;
+        }
+        .delete {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 5px;
+            margin: auto;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 11px;
+        }
+    }
+    .todo.wancheng {
+        .check {
+            background: url(../img/Inner_12.png)no-repeat center center;
+            background-size: 40px 40px;
+        }
+        p {
+            text-decoration: line-through;
+            color: #ccc;
+        }
+    }
+    .todo.bianji {
+        .check,
+        p,
+        .delete {
+            display: none;
+        }
+        input {
+            display: block;
+        }
+    }
+    .todo {
+        overflow: hidden;
+        transition: all 0.8s ease;
+    }
+    .todo.ng-enter {
+        height: 0;
+    }
+    .todo.ng-enter-active {
+        height: 40px;
+    }
+    .todo.ng-leave {
+        height: 40px;
+    }
+    .todo.ng-leave-active {
+        height: 0;
+    }
+}
+.main .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 68px;
+    background: url(../img/Inner_17.png)no-repeat;
+    background-size: 100%;
+    a {
+        display: inline-block;
+        width: 32%;
+        margin-right: 2px;
+        height: 100%;
+        span {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
